@@ -12,10 +12,17 @@ header = Headers(
 
 ua = UserAgent()
 
-#! Один вариант
-response = requests.get(url="http://httpbin.org/user-agent", headers=header.generate())
+# Один вариант
+response = requests.get(
+    url="http://httpbin.org/user-agent",
+    headers=header.generate()
+)
 print(response.text)
 
-#! Второй вариант
-response = requests.get(url="http://httpbin.org/user-agent", headers={"user-agent": ua.random})
+# Второй вариант
+response = requests.get(
+    url="http://httpbin.org/user-agent",
+    headers={"user-agent": ua.random}
+)
+
 print(response.text)
